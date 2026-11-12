@@ -1,8 +1,18 @@
-# Vector Database Integration
+# Vector Search Demo
 
-This repository provides a prototype for integrating with vector databases (e.g., Pinecone, ChromaDB) to perform similarity searches.
+Run an exact cosine similarity search over three synthetic vectors with Python.
+The demo uses an in-memory fixture and the standard library.
 
-## How to Run
-1. Install dependencies: `pip install -r requirements.txt`
-2. Configure your API keys and connection settings in `vector_demo.py`
-3. Run the demo: `python vector_demo.py`
+```bash
+python vector_demo.py
+```
+
+The first query ranks Cooling water first. The second ranks Power delivery
+first. The ordering changes with the query vector. A zero vector, nonfinite
+coordinate, or wrong dimension raises a clear error.
+
+The three coordinates are illustrative features. The demo covers exact ranking
+on a fixed set of vectors. A deployed index would add an embedding pipeline,
+persistent storage, and retrieval evaluation.
+
+[Compare retrieval strategies on a labeled dataset](https://github.com/r-aaron-graham/adaptive-rag-efficiency-lab)
